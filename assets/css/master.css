@@ -1,0 +1,95 @@
+.navbar {
+  padding-bottom: 0;
+  padding-top: 0;
+background-color: rgba(12, 255, 142, 1) ;
+}
+
+.navbar-brand {
+  color: black;
+  font-family: 'Odibee Sans';
+  font-size: 2rem;
+}
+.navbar-brand:hover{
+  color:white;
+}
+.wc {
+  color: black;
+}
+.nav-link:hover{
+  color:white;
+}
+
+.navbar-toggler{
+  border:.15rem solid white;
+  padding:.75rem;
+
+}
+
+.fa-1x {
+font-size: 2rem;
+}
+.navbar-toggler.toggler-example {
+cursor: pointer;
+}
+.dark-blue-text {
+color: white;
+}
+@media only screen and (max-width:1065px) {
+  .secoimg{
+    position:static;
+    height:100%;
+    width:100%;
+  }
+
+
+  .heading{
+    font-size:3rem;
+  }
+}
+
+
+
+@media only screen and (max-width:400px) {
+
+.heading{
+  font-size: 2.5rem;
+}
+
+}
+
+
+.svg-inline--fa:hover{
+  color: white;
+
+}
+.contact{
+  background:black;}
+
+.faoo:hover{
+
+
+color:rgba(12, 255, 142, 1);
+}
+.contact{
+  padding:5%;
+}
+.adr{
+  color: white;
+
+}
+.s22{
+  text-align: center;
+  align-items: center;
+}
+.e{
+  background-color: white;
+}
+.e:hover{
+  background-color:rgba(12, 255, 142, 1);
+}
+.mc{
+  height:100%;
+}
+.w{
+  margin:11% 17%;
+}

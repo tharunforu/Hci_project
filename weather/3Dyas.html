@@ -1,0 +1,129 @@
+<html>
+
+<head>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/master.css">
+    <style>
+        body {
+            font-family: 'Do Hyeon', sans-serif;
+
+            height: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+        }
+
+        .row {
+
+            margin: 30px;
+        }
+
+        .detail {
+
+            text-align: center;
+            width: 290px;
+            height: 430px;
+            background-color: rgba(0, 0, 0, 0.39);
+            border-radius: 8px;
+        }
+
+        img {
+            width: 120px;
+            height: 100px;
+        }
+
+        h4 {
+            color: rgb(255, 255, 255);
+        }
+
+        h5 {
+            color: aliceblue;
+        }
+
+        .classWithPad {
+            margin: 10px;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+  <header>
+
+    <nav class="navbar navbar-expand-md ">
+      <a class="navbar-brand wc" href="#">AWP</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="dark-blue-text"><i class="fas fa-bars fa-1x"></i></span>
+
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav  ml-auto">
+          <li class="nav-item ">
+            <a class="nav-link wc" href="../index.html">HOME</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link wc" href="../assets/html/myloc.html">MY LOCATION</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link wc " href="../assets/html/contact.html">CONTACT</a>
+          </li>
+          <li>
+            <a class="btn zoom z1 "><i class="fas fa-search-plus"></i></a>
+            <a class="btn zoom-out  z2 "><i class="fas fa-search-minus"></i></a>
+            <a class="btn zoom-init z3 "><i class="fas fa-recycle"></i></a>
+
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+    <div id="total" class="container">
+        <div class="row">
+            <div class="col   ">
+                <div class="classWithPad detail">
+                    <img v-bind:src="url1">
+                    <h4>{{Desc1}}</h4>
+                    <h4>{{Temp1}} &deg;C</h4>
+                    <h4 id="desc">Feels Like : {{Feels1}} &deg;C</h4>
+                    <hr>
+                    <h4>{{Dat1}}</h4>
+                </div>
+            </div>
+            <div class="col   ">
+                <div class="classWithPad detail">
+                    <img v-bind:src="url2">
+                    <h4>{{Desc2}}</h4>
+                    <h4>{{Temp2}} &deg;C</h4>
+                    <h4 id="desc">Feels Like : {{Feels2}} &deg;C</h4>
+                    <hr>
+                    <h4>{{Dat2}}</h4>
+                </div>
+            </div>
+            <div class="col  ">
+                <div class="classWithPad detail">
+                    <img v-bind:src="url3">
+                    <h4>{{Desc3}}</h4>
+                    <h4>{{Temp3}} &deg;C</h4>
+                    <h4 id="desc">Feels Like : {{Feels3}} &deg;C</h4>
+                    <hr>
+                    <h4>{{Dat3}}</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="3DApp.js"></script>
+    <script type="text/javascript" src="../assets/js/zoom.js">
+
+    </script>
+</body>
+
+</html>

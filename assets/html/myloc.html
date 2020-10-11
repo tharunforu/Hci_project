@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>AWP</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Akronim&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Odibee+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/master.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+    <style>
+
+      #map {
+        height: 100%;
+      }
+
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+
+  </head>
+  <body>
+<section>
+  <header>
+
+    <nav class="navbar navbar-expand-md ">
+      <a class="navbar-brand wc" href="#">AWP</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="dark-blue-text"><i class="fas fa-bars fa-1x"></i></span>
+
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav  ml-auto">
+          <li class="nav-item ">
+            <a class="nav-link wc" href="../../index.html" >HOME</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link wc" >MY LOCATION</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link wc" href="contact.html">CONTACT</a>
+          </li>
+          <li>
+            <a class="btn zoom z1 z"><i class="fas fa-search-plus"></i></a>
+            <a class="btn zoom-out  z2 z"><i class="fas fa-search-minus"></i></a>
+            <a class="btn zoom-init z3 z"><i class="fas fa-recycle"></i></a>
+
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+</section>
+      <div id="map"></div>
+
+
+<script type="text/javascript" src="../js/myloc.js">
+
+</script>
+    <script defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDu_qsacDjEOCgo6iEqJiwEXxPyxMs-jUk&callback=initMap">
+    </script>
+      <script type="text/javascript" src="../js/zoom.js">  </script>
+  </body>
+</html>

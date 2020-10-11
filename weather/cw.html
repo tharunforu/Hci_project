@@ -1,0 +1,171 @@
+<html>
+
+<head>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/master.css">
+    <style>
+        body {
+            font-family: 'Do Hyeon', sans-serif;
+            height: 100%;
+
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin: auto;
+        }
+
+        .content-div {
+            text-align: center;
+            width: 600px;
+            height: 600px;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+
+        }
+
+        .detail {
+            margin: auto;
+            text-align: center;
+            width: 290px;
+            height: 430px;
+            background-color: rgba(0, 0, 0, 0.39);
+            border-radius: 8px;
+        }
+
+        img {
+            width: 120px;
+            height: 100px;
+        }
+
+        h4 {
+            color: rgb(255, 255, 255);
+        }
+
+        h5 {
+            color: aliceblue;
+        }
+    </style>
+</head>
+
+<body >
+  <header>
+
+    <nav class="navbar navbar-expand-md ">
+      <a class="navbar-brand wc" href="#">AWP</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="dark-blue-text"><i class="fas fa-bars fa-1x"></i></span>
+
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav  ml-auto">
+          <li class="nav-item ">
+            <a class="nav-link wc" href="../index.html">HOME</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link wc" href="../assets/html/myloc.html">MY LOCATION</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link wc " href="../assets/html/contact.html">CONTACT</a>
+          </li>
+          <li>
+            <a class="btn zoom z1 "><i class="fas fa-search-plus"></i></a>
+            <a class="btn zoom-out  z2 "><i class="fas fa-search-minus"></i></a>
+            <a class="btn zoom-init z3 "><i class="fas fa-recycle"></i></a>
+
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <div class="">
+    <div id="wrapper" class="content-div">
+
+        <div id="total" class="detail">
+            <img v-bind:src="url">
+            <h4>{{Desc}}</h4>
+            <h4 >{{Temp}} &deg;C</h4>
+            <h4 id="desc">Feels Like : {{Feels}} &deg;C</h4>
+            <hr>
+            <h5 id="feels"></h5>
+            <h5 id="press"></h5>
+            <h5 id="date"></h5>
+        </div>
+    </div>
+
+  </div>
+
+    <!-- <script>
+
+        console.log("clicked")
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function (position) {
+                console.log(position);
+                axios.get("http://api.openweathermap.org/data/2.5/weather/",
+                    {
+                        params: {
+                            lat: position.coords.latitude,
+                            lon: position.coords.longitude,
+                            // lat:19.9975,
+                            // lon:73.7898,
+                            units: 'metric',
+                            appid: 'ad9b33fefe57f844339b6e4961de8c6a'
+                        }
+                    }).then(function (res) {
+                        console.log(res);
+                        // var img = document.createElement("img");
+                        // var ele = document.createElement("span");
+                        // document.getElementById("Img").src = "http://openweathermap.org/img/w/" + res.data.weather[0].icon + ".png";
+                        // img.setAttribute("src", "http://openweathermap.org/img/w/" + res.data.weather[0].icon + ".png");
+                        // ele.append(img);
+
+                        var temp = res.data.main.temp;
+                        console.log(temp);
+                        document.getElementById("temp").innerHTML = temp + '&deg;C';
+                        // var elem = document.getElementById('total').appendChild(ele);
+
+                        // var Desc = document.createElement('h4');
+
+                        // Desc.innerHTML = temp + '&deg;C' + "<br>" + res.data.weather[0].main + "<span> | <span>" + res.data.weather[0].description+"<hr>"+"<hr>";
+                        // elem.appendChild(Desc);
+                        document.getElementById("desc").innerHTML = res.data.weather[0].main + " | " + res.data.weather[0].description;
+
+                        document.getElementById("feels").innerHTML = "Feels Like : " + res.data.main.feels_like + '&deg;C';
+                        // var feels_like = document.createElement('h5');
+                        // feels_like.innerHTML = "Feels Like : " + res.data.main.feels_like + '&deg;C'  ;
+                        // elem.appendChild(feels_like);
+                        document.getElementById("press").innerHTML = "Pressure : " + res.data.main.pressure + " hPa";
+                        // var pre = document.createElement('h5');
+                        // pre.innerHTML = "Pressure : " + res.data.main.pressure +" hPa" ;
+                        // elem.appendChild(pre);
+                        var utc = new Date().toJSON().slice(0,10).replace(/-/g,'/');
+                        document.getElementById("date").innerHTML= utc;
+
+
+                    }).catch(function (error) {
+                        alert(error);
+                        console.log(error);
+                    });
+            });
+        }
+
+
+    </script> -->
+    <script src="app.js"></script>
+    <script type="text/javascript" src="../assets/js/zoom.js">
+
+    </script>
+</body>
+
+</html>
